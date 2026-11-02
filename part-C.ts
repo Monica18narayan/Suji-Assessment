@@ -8,3 +8,6 @@ function debounce<F extends (...a: any[]) => any>(
  wait: number,
  options?: { leading?: boolean; trailing?: boolean }
 ): ((...args: Parameters<F>) => void) & { cancel(): void; flush(): void };
+
+
+
