@@ -26,9 +26,13 @@ function authguard(): CanActivateFn {
 
  authInterceptor: HttpInterceptorFn {
     Service = inject(TokenService);
-    if(Service.getToken()){
-        
-    }
+    if (token) {
+    modifiedReq = req.clone({
+      setHeaders: {
+        Authorization: ` ${token}`
+      }
+    });
+  }
  }
 
 
